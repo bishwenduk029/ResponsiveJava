@@ -1,6 +1,7 @@
 package com.reactive.util;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class ReactiveSource {
@@ -12,6 +13,7 @@ public class ReactiveSource {
 	}
 	
 	public boolean addComputation(Runnable computation) {
+		Objects.requireNonNull(computation);
 		return computations.add(computation);
 	}
 	
